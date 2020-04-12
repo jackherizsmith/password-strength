@@ -8,9 +8,9 @@ const emailInput = form.querySelector("#email");
 const emailRegex = (/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
 
 const passwordInput = form.querySelector("#password");
-const passHack = document.querySelector("#passwordTime");
+const passTime = document.querySelector("#passwordTime");
 
-passHack.textContent = "Your password should take an experienced hacker longer than 4 months to crack."
+passTime.textContent = "Your password should take an experienced hacker longer than 4 months to crack."
 
 let valid = {
   name: false, 
@@ -40,7 +40,7 @@ form.addEventListener("submit", event => {
 });
 
 function validate(input, test){
-  input.parentElement.nextElementSibling.textContent = '';
+  input.nextElementSibling.textContent = '';
   if (test) {
     input.style.borderColor = "hsl(106, 100%, 30%)";
     return true;
@@ -66,7 +66,7 @@ passwordInput.addEventListener("input", () => {
   passStrength(result.guesses_log10);
   valid.password = validate(passwordInput, result.score >= 3);
   
-  passHack.textContent =
+  passTime.textContent =
   (passwordInput.value.length > 0) ? 
     "It could take " + result.crack_times_display.online_no_throttling_10_per_second + " to crack this password." :
     "Your password should take an experienced hacker longer than 4 months to crack.";

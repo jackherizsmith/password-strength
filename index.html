@@ -13,13 +13,13 @@
         Name
         <span aria-hidden="true">*</span>
       </label>
-      <input id="name" type="text" placeholder="e.g. John Smith" required />
+      <input id="name" class="input" type="text" placeholder="e.g. John Smith" required />
       <div id="nameError" class="error"></div>
       <label for="email">
         Email
         <span aria-hidden="true">*</span>
       </label>
-      <input id="email" type="email" aria-describedby="emailError" placeholder="e.g. hello@johnsmith.com" required />
+      <input id="email" class="input" type="email" aria-describedby="emailError" placeholder="e.g. hello@johnsmith.com" required />
       <div id="emailError" class="error"></div>
 
       <label for="password">
@@ -32,6 +32,7 @@
       </div>
       <input
         id="password"
+        class="input"
         type="password"
         aria-describedby="passwordRequirements passwordError"
         required
