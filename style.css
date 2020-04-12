@@ -48,11 +48,6 @@
     background-color: #fff;
   }
 
-  .input {
-    display: flex;
-    flex-direction: row;
-  }
-
   .input__verify {
     color:hsl(0, 100%, 45%);
     width:0%;

@@ -13,19 +13,13 @@
         Name
         <span aria-hidden="true">*</span>
       </label>
-      <div class="input">
-        <input id="name" type="text" placeholder="e.g. John Smith" required />
-        <div class="input__verify"></div>
-      </div>
+      <input id="name" type="text" placeholder="e.g. John Smith" required />
       <div id="nameError" class="error"></div>
       <label for="email">
         Email
         <span aria-hidden="true">*</span>
       </label>
-      <div class="input">
-        <input id="email" type="email" aria-describedby="emailError" placeholder="e.g. hello@johnsmith.com" required />
-        <div class="input__verify"></div>
-      </div>
+      <input id="email" type="email" aria-describedby="emailError" placeholder="e.g. hello@johnsmith.com" required />
       <div id="emailError" class="error"></div>
 
       <label for="password">
@@ -36,22 +30,20 @@
         Unpredictable passwords are stronger: <br>
         <strong>blackberries1</strong> is better than <strong>ex4mpl3pa55w0rd</strong>.  
       </div>
-      <div class="input">
-        <input
-          id="password"
-          type="password"
-          aria-describedby="passwordRequirements passwordError"
-          required
-          pattern="(?=.*[A-z])(?=.*\d)[A-z\d]+"
-          minlength="8"
-          placeholder="Make it memorable"
-        />
-        <div class="input__verify"></div>
-      </div>
+      <input
+        id="password"
+        type="password"
+        aria-describedby="passwordRequirements passwordError"
+        required
+        pattern="(?=.*[A-z])(?=.*\d)[A-z\d]+"
+        minlength="8"
+        placeholder="Make it memorable"
+      />
       <div id="passwordError" class="error"></div>
       <div id="passwordScore" class="password__score-box"><div class="password__score"></div></div>
       <div id="passwordTime" class="password__time">Your password should contain at least 8 characters, including a letter and number.</div>
       <button>Sign up</button>
+      <p>Read more about how we measure password strength <a href="https://dropbox.tech/security/zxcvbn-realistic-password-strength-estimation" target="_blank">here</a>.</p>
     </form>
     <script src="index.js"></script>
     <script src="zxcvbn.js"></script>
