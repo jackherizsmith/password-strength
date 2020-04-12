@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trying new things</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Create an account</h1>
+    <form>
+      <label for="name">
+        Name
+        <span aria-hidden="true">*</span>
+      </label>
+      <div class="input">
+        <input id="name" type="text" placeholder="e.g. John Smith" required />
+        <div class="input__verify"></div>
+      </div>
+      <div id="nameError" class="error"></div>
+      <label for="email">
+        Email
+        <span aria-hidden="true">*</span>
+      </label>
+      <div class="input">
+        <input id="email" type="email" aria-describedby="emailError" placeholder="e.g. hello@johnsmith.com" required />
+        <div class="input__verify"></div>
+      </div>
+      <div id="emailError" class="error"></div>
+
+      <label for="password">
+        Password
+        <span aria-hidden="true">*</span>
+      </label>
+      <div id="passwordRequirements" class="requirements">
+        Unpredictable passwords are stronger: <br>
+        <strong>blackberries1</strong> is better than <strong>ex4mpl3pa55w0rd</strong>.  
+      </div>
+      <div class="input">
+        <input
+          id="password"
+          type="password"
+          aria-describedby="passwordRequirements passwordError"
+          required
+          pattern="(?=.*[A-z])(?=.*\d)[A-z\d]+"
+          minlength="8"
+          placeholder="Make it memorable"
+        />
+        <div class="input__verify"></div>
+      </div>
+      <div id="passwordError" class="error"></div>
+      <div id="passwordScore" class="password__score-box"><div class="password__score"></div></div>
+      <div id="passwordTime" class="password__time">Your password should contain at least 8 characters, including a letter and number.</div>
+      <button>Sign up</button>
+    </form>
+    <script src="index.js"></script>
+    <script src="zxcvbn.js"></script>
+  </body>
+</html>
